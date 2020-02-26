@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="assets/style.css" />
     <title>Work Day Scheduler</title>
   </head>
-
   <body>
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
@@ -29,10 +28,148 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      <!-- Timeblocks go here -->
+      <!-- 9AM Timeblock -->
+      <div class = "time-block row">
+        <div class = "col-sm-1 hour">
+            9AM
+        </div>
+        <textarea class = "col-sm-10">
+        </textarea>
+        <button id = "save" class = "col-sm-1 saveBtn">
+          save
+        </button>
     </div>
-
+    <!-- 10AM Timeblock -->
+    <div class = "time-block row">
+      <div class = "col-sm-1 hour">
+          10AM
+      </div>
+      <textarea class = "col-sm-10">
+      </textarea>
+      <button class = "col-sm-1 saveBtn">
+        save
+      </button>
+  </div>
+    <!-- 11AM Timeblock -->
+    <div class = "time-block row">
+      <div class = "col-sm-1 hour">
+          11AM
+      </div>
+      <textarea class = "col-sm-10">
+      </textarea>
+      <button class = "col-sm-1 saveBtn">
+        save
+      </button>
+    </div>
+    <!-- 12PM Timeblock -->
+    <div class = "time-block row">
+      <div class = "col-sm-1 hour">
+          12PM
+      </div>
+      <textarea class = "col-sm-10">
+      </textarea>
+      <button class = "col-sm-1 saveBtn">
+        save
+      </button>
+    </div>
+    <!-- 1PM Timeblock -->
+    <div class = "time-block row">
+      <div class = "col-sm-1 hour">
+          1PM
+      </div>
+      <textarea class = "col-sm-10">
+      </textarea>
+      <button class = "col-sm-1 saveBtn">
+        save
+      </button>
+    </div>
+    <!-- 2PM Timeblock -->
+    <div class = "time-block row">
+      <div class = "col-sm-1 hour">
+          2PM
+      </div>
+      <textarea class = "col-sm-10">
+      </textarea>
+      <button class = "col-sm-1 saveBtn">
+        save
+      </button>
+    </div>
+    <!-- 3PM Timeblock -->
+    <div class = "time-block row">
+      <div class = "col-sm-1 hour">
+          3PM
+      </div>
+      <textarea class = "col-sm-10">
+      </textarea>
+      <button class = "col-sm-1 saveBtn">
+        save
+      </button>
+    </div>
+    <!-- 4PM Timeblock -->
+    <div class = "time-block row">
+      <div class = "col-sm-1 hour">
+          4PM
+      </div>
+      <textarea class = "col-sm-10">
+      </textarea>
+      <button class = "col-sm-1 saveBtn">
+        save
+      </button>
+    </div>
+    <!-- 5PM Timeblock -->
+    <div class = "time-block row">
+      <div class = "col-sm-1 hour">
+          5PM
+      </div>
+      <textarea class = "col-sm-10">
+      </textarea>
+      <button class = "col-sm-1 saveBtn">
+        save
+      </button>
+    </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script type="text/javascript">
+    const time = document.getElementById("currentDay");
+    setInterval(() => {
+      const now = moment();
+      const humanReadable = now.format('MMMM Do YYYY, h:mm:ss a');
+      time.textContent = humanReadable;
+    }, 1000)
+
+timeUpdate ();
+
+    function timeUpdate(now) {
+    var beginningTime = moment("9:00:00 am", "h:mm:ss a");
+    var endingTime = moment("5:00:00 pm", "h:mm:ss a");
+    if (moment(beginningTime).isBefore(now)){
+        $("textarea").addClass("past");
+    }
+  
+    else if (moment(endingTime).isAfter(now)){
+        $("textarea").addClass("future");
+    }
+    else {
+        $("textarea").addClass("present");
+    }
+    }
+//  save.addEventListener("click", function (event) {
+//     event.preventDefault();
+
+// var initialsValue = document.querySelector("#initials").value;
+
+
+   
+//     localStorage.setItem("initialsValue", initialsValue);
+    
+// });
+
+      
+    </script>
   </body>
 </html>
+
+
+
+
+
