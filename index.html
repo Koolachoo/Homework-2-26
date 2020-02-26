@@ -153,18 +153,27 @@ timeUpdate ();
         $("textarea").addClass("present");
     }
     }
-//  save.addEventListener("click", function (event) {
-//     event.preventDefault();
-
-// var initialsValue = document.querySelector("#initials").value;
 
 
-   
-//     localStorage.setItem("initialsValue", initialsValue);
-    
-// });
 
-      
+
+    $("button").on('click', function (event) {
+        event.preventDefault();
+        var scheduleValue = $("textarea").val();
+        localStorage.setItem("scheduleValue", scheduleValue);
+        // localStorage.getItem("scheduleValue");
+        // $("textarea").text("scheduleValue");
+        sessionStorage.setItem('scheduleValue', scheduleValue);
+        var sesh = sessionStorage.getItem('scheduleValue');
+        // scheduleValue.get();
+        // Save data to sessionStorage
+        // console.log(sessionStorage.getItem("scheduleValue"));
+        // Get saved data from sessionStorage
+        // let data = sessionStorage.getItem('scheduleValue');
+
+
+ });
+
     </script>
   </body>
 </html>
