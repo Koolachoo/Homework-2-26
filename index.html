@@ -130,6 +130,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script type="text/javascript">
+
+    // creates teh timer based off of the browser's clock
     const time = document.getElementById("currentDay");
     setInterval(() => {
       const now = moment();
@@ -138,7 +140,7 @@
     }, 1000)
 
 timeUpdate ();
-
+//this function changes the color of the blocks based on the time of day
     function timeUpdate(now) {
     var beginningTime = moment("9:00:00 am", "h:mm:ss a");
     var endingTime = moment("5:00:00 pm", "h:mm:ss a");
@@ -153,7 +155,7 @@ timeUpdate ();
         $("textarea").addClass("present");
     }
     }
-
+// getting item from local storage, each block
    localStorage.getItem("block9");
    localStorage.getItem("block10");
    localStorage.getItem("block11");
@@ -165,7 +167,7 @@ timeUpdate ();
    localStorage.getItem("block17");
  
 
-
+// appends the data to the respective block
   $("#block-9").val(localStorage.getItem("block9"));
   $("#block-10").val(localStorage.getItem("block10"));
   $("#block-11").val(localStorage.getItem("block11"));
@@ -177,7 +179,7 @@ timeUpdate ();
   $("#block-17").val(localStorage.getItem("block17"));
 
 
-
+// button click to catch values for each block
 
     $("button").on('click', function (event) {
         event.preventDefault();
