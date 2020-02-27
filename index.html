@@ -33,9 +33,9 @@
         <div class = "col-sm-1 hour">
             9AM
         </div>
-        <textarea class = "col-sm-10">
+        <textarea id = "block-9" class = "col-sm-10">
         </textarea>
-        <button id = "save" class = "col-sm-1 saveBtn">
+        <button class = "col-sm-1 saveBtn" data-block = "9">
           save
         </button>
     </div>
@@ -44,9 +44,9 @@
       <div class = "col-sm-1 hour">
           10AM
       </div>
-      <textarea class = "col-sm-10">
+      <textarea id = "block-10" class = "col-sm-10">
       </textarea>
-      <button class = "col-sm-1 saveBtn">
+      <button class = "col-sm-1 saveBtn" data-block = "10">
         save
       </button>
   </div>
@@ -55,9 +55,9 @@
       <div class = "col-sm-1 hour">
           11AM
       </div>
-      <textarea class = "col-sm-10">
+      <textarea id = "block-11" class = "col-sm-10">
       </textarea>
-      <button class = "col-sm-1 saveBtn">
+      <button class = "col-sm-1 saveBtn" data-block = "11">
         save
       </button>
     </div>
@@ -66,9 +66,9 @@
       <div class = "col-sm-1 hour">
           12PM
       </div>
-      <textarea class = "col-sm-10">
+      <textarea id = "block-12" class = "col-sm-10">
       </textarea>
-      <button class = "col-sm-1 saveBtn">
+      <button class = "col-sm-1 saveBtn" data-block = "12">
         save
       </button>
     </div>
@@ -77,9 +77,9 @@
       <div class = "col-sm-1 hour">
           1PM
       </div>
-      <textarea class = "col-sm-10">
+      <textarea id = "block-13" class = "col-sm-10">
       </textarea>
-      <button class = "col-sm-1 saveBtn">
+      <button class = "col-sm-1 saveBtn" data-block = "13">
         save
       </button>
     </div>
@@ -88,9 +88,9 @@
       <div class = "col-sm-1 hour">
           2PM
       </div>
-      <textarea class = "col-sm-10">
+      <textarea id = "block-14" class = "col-sm-10">
       </textarea>
-      <button class = "col-sm-1 saveBtn">
+      <button class = "col-sm-1 saveBtn" data-block = "14">
         save
       </button>
     </div>
@@ -99,9 +99,9 @@
       <div class = "col-sm-1 hour">
           3PM
       </div>
-      <textarea class = "col-sm-10">
+      <textarea id = "block-15" class = "col-sm-10">
       </textarea>
-      <button class = "col-sm-1 saveBtn">
+      <button class = "col-sm-1 saveBtn" data-block = "15">
         save
       </button>
     </div>
@@ -110,9 +110,9 @@
       <div class = "col-sm-1 hour">
           4PM
       </div>
-      <textarea class = "col-sm-10">
+      <textarea id = "block-16" class = "col-sm-10">
       </textarea>
-      <button class = "col-sm-1 saveBtn">
+      <button class = "col-sm-1 saveBtn" data-block = "16"> 
         save
       </button>
     </div>
@@ -154,29 +154,55 @@ timeUpdate ();
     }
     }
 
-var jeff =  localStorage.getItem("scheduleValue");
-console.log(jeff);
-$("#block-17").val(jeff);
+   localStorage.getItem("block9");
+   localStorage.getItem("block10");
+   localStorage.getItem("block11");
+   localStorage.getItem("block12");
+   localStorage.getItem("block13");
+   localStorage.getItem("block14");
+   localStorage.getItem("block15");
+   localStorage.getItem("block16");
+   localStorage.getItem("block17");
+ 
+
+
+  $("#block-9").val(localStorage.getItem("block9"));
+  $("#block-10").val(localStorage.getItem("block10"));
+  $("#block-11").val(localStorage.getItem("block11"));
+  $("#block-12").val(localStorage.getItem("block12"));
+  $("#block-13").val(localStorage.getItem("block13"));
+  $("#block-14").val(localStorage.getItem("block14"));
+  $("#block-15").val(localStorage.getItem("block15"));
+  $("#block-16").val(localStorage.getItem("block16"));
+  $("#block-17").val(localStorage.getItem("block17"));
+
+
 
 
     $("button").on('click', function (event) {
         event.preventDefault();
-        console.log($(this).attr("data-block"))
-        var timeblock = $(this).attr("data-block")
-        var scheduleValue = $("#block-" + timeblock).val();
-        localStorage.setItem("scheduleValue", scheduleValue);
-        // localStorage.getItem("scheduleValue");
-        // $("textarea").text("scheduleValue");
-        // sessionStorage.setItem('scheduleValue', scheduleValue);
-        // var sesh = sessionStorage.getItem('scheduleValue');
-        // scheduleValue.get();
-        // Save data to sessionStorage
-        // console.log(sessionStorage.getItem("scheduleValue"));
-        // Get saved data from sessionStorage
-        // let data = sessionStorage.getItem('scheduleValue');
-
-
- });
+        // console.log($(this).attr("data-block"))
+        // var timeblock = $(this).attr("data-block")
+        // var scheduleValue = $("#block-" + timeblock).val();
+        block9 = $("#block-9").val();
+        block10 = $("#block-10").val();
+        block11 = $("#block-11").val();
+        block12 = $("#block-12").val();
+        block13 = $("#block-13").val();
+        block14 = $("#block-14").val();
+        block15 = $("#block-15").val();
+        block16 = $("#block-16").val();
+        block17 = $("#block-17").val();
+        localStorage.setItem("block9", block9);
+        localStorage.setItem("block10", block10);
+        localStorage.setItem("block11", block11);
+        localStorage.setItem("block12", block12);
+        localStorage.setItem("block13", block13);
+        localStorage.setItem("block14", block14);
+        localStorage.setItem("block15", block15);
+        localStorage.setItem("block16", block16);
+        localStorage.setItem("block17", block17);
+});
 
     </script>
   </body>
